@@ -1,5 +1,7 @@
 from src.task import Task
 import unittest
+from src.task_decider import get_preferred_option
+
 
 class TestTask(unittest.TestCase):
 
@@ -13,3 +15,11 @@ class TestTask(unittest.TestCase):
 
     def test_task_has_duration(self):
         self.assertEqual(20, self.task_clean_windows.duration)
+
+
+    def test_clean_window_chosen_over_wash_dishes(self):
+        self.assertEqual("clean windows", get_preferred_option("clean windows", "wash dishes"))
+
+    
+
+    
