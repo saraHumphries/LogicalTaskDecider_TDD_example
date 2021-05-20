@@ -22,8 +22,13 @@ class TestTask(unittest.TestCase):
 
     def test_cd_over_cw(self):
         self.assertEqual("cook dinner", get_preferred_option(self.task_clean_windows, self.task_cook_dinner))
-    
 
+    def test_wd_over_cd__1(self):
+        self.assertEqual("wash dishes", get_preferred_option(self.task_wash_dishes, self.task_cook_dinner))
+    
+    def test_wd_over_cd__2(self):
+        self.assertEqual("wash dishes", get_preferred_option(self.task_cook_dinner, self.task_wash_dishes))
+    
     
 
     
