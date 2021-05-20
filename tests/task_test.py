@@ -6,17 +6,16 @@ from src.task_decider import get_preferred_option
 class TestTask(unittest.TestCase):
 
     def setUp(self):
-        self.task_clean_windows = Task("clean windows", ["wash dishes", "do ironing"])
-        self.task_wash_dishes = Task("wash dishes", ["cook dinner", "wash clothes"])
-        self.task_cook_dinner = Task("cook dinner", ["clean windows", "do ironing"])
-        self.task_wash_clothes = Task("wash clothes", ["cook dinner", "clean windows"])
-        self.task_do_ironing = Task("do ironing", ["wash clothes", "wash dishes"])
+        self.task_clean_windows = Task("clean windows")
+        self.task_wash_dishes = Task("wash dishes")
+        self.task_cook_dinner = Task("cook dinner")
+        self.task_wash_clothes = Task("wash clothes")
+        self.task_do_ironing = Task("do ironing")
     
     def test_task_has_description(self):
         self.assertEqual("clean windows", self.task_clean_windows.description)
 
-    def test_task_has_duration(self):
-        self.assertEqual(20, self.task_clean_windows.duration)
+    
 
 
     def test_cw_over_wd(self):
