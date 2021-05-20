@@ -6,9 +6,11 @@ from src.task_decider import get_preferred_option
 class TestTask(unittest.TestCase):
 
     def setUp(self):
-        self.task_clean_windows = Task("clean windows", 20)
-        self.task_wash_dishes = Task("wash dishes", 10)
-        self.task_cook_dinner = Task("cook dinner", 60)
+        self.task_clean_windows = Task("clean windows", 20, "wash dishes")
+        self.task_wash_dishes = Task("wash dishes", 10, "cook dinner")
+        self.task_cook_dinner = Task("cook dinner", 60, "clean windows")
+        # self.task_wash_clothes = Task("wash clothes", 45)
+        # self.task_do_ironing = Task("do ironing", 35)
     
     def test_task_has_description(self):
         self.assertEqual("clean windows", self.task_clean_windows.description)
@@ -39,3 +41,5 @@ class TestTask(unittest.TestCase):
     # -----------
     # Extension 
     
+    # def test_wc_over_cw(self):
+    #     self.assertEqual("wash clothes", get_preferred_option(self.task_clean_windows, self.task_wash_clothes))
